@@ -10,3 +10,8 @@ This system uses a modular agentic workflow to categorize, retrieve, and solve g
 
 ## AI Collaboration Reflection
 During development, AI assisted in structuring the Streamlit UI and refining the file-reading logic. One challenge was the environment path for Streamlit on Mac, which was solved by manual path execution.
+
+## Reliability Summary
+- **Test Pass Rate:** 3/3 (100%) 
+- **Observations:** The guardrail effectively caught non-gameplay queries. The retrieval system correctly identified bugs listed in `patch_notes.txt`, though accuracy may drop if the knowledge base remains small.
+- **Confidence Rating:** High (0.95) for known bugs; Medium (0.70) for novel glitches.
