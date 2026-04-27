@@ -1,76 +1,55 @@
-# 🎮 Game Glitch Investigator: The Impossible Guesser
+🎮 Game Glitch Investigator: Professional Applied AI System
+🚨 The Situation
+Originally, I was given an AI-generated "Number Guessing Game" built with Streamlit that was unplayable and full of bugs. I successfully repaired the game mechanics and have now evolved it into a professional AI tool that uses Agentic Workflows and Retrieval-Augmented Generation (RAG) to investigate game glitches.
 
-## 🚨 The Situation
+🚀 Phase 2: Applied AI System (Project 4 Upgrade)
+In this version, I've integrated a custom AI Agent that helps developers triage bugs.
 
-I was given an AI-generated "Number Guessing Game" built with Streamlit.
-The AI wrote the code, but left it full of bugs and unplayable.
+🧠 Agentic Workflow & RAG
+The system follows a structured 3-step process to ensure accurate and trustworthy results:
 
-- I could not win.
-- The hints were lying to me.
-- The score was going negative.
+Categorization: The AI classifies reports into Gameplay or Technical categories.
 
-## 🛠️ Setup
+Retrieval (RAG): The system searches a local knowledge base (patch_notes.txt) to find historical fixes.
 
-1. Install dependencies: `pip install -r requirements.txt`
-2. Activate your virtual environment: `source venv/bin/activate`
-3. Run the app: `python3 -m streamlit run app.py`
+Reasoning: The AI combines the retrieved facts with the user's report to provide a verifiable solution.
 
-## 🕵️‍♂️ My Mission
+🛡️ Reliability & Guardrails
+To ensure the system is production-ready, I implemented:
 
-1. **I played the game.** I opened the "Developer Debug Info" tab
-   to see the secret number and observed the broken behavior.
-2. **I found the bugs.** I noticed wrong hints, negative scores,
-   out of range guesses being accepted, and broken logic.
-3. **I fixed the logic.** I moved all functions into `logic_utils.py`
-   and repaired each bug one by one.
-4. **I tested my fixes.** I ran `python3 -m pytest` until all
-   5 tests passed green.
+Topic Guardrails: A keyword-based filter that prevents the AI from answering off-topic queries (e.g., recipes or general chat).
 
-## 📝 My Experience
+Process Transparency: The terminal outputs real-time [AGENT] logs, showing the AI's step-by-step thinking for every investigation.
 
-**Game Purpose:**
-I was debugging a number guessing game where the player guesses
-a secret number between 1 and 100. The player gets hints after
-each guess and has a limited number of attempts based on difficulty.
+📊 System Architecture
+🛠️ Setup & Usage
+Install dependencies: pip install streamlit
 
-**Bugs I Found:**
-- Bug 1: I noticed the High/Low hints were completely reversed.
-  When I guessed 500 with a secret of 15, the game told me
-  "Go HIGHER" instead of "Go LOWER."
-- Bug 2: I discovered that every other guess converted the secret
-  number to a string, causing random incorrect comparisons.
-- Bug 3: I observed the score could go negative and even gain
-  points for wrong guesses due to broken scoring logic.
-- Bug 4: I found that Hard difficulty range was 1-50, which was
-  actually easier than Normal difficulty at 1-100.
+Launch System: /Users/drawndrrex/Library/Python/3.9/bin/streamlit run app.py
 
-**Fixes I Applied:**
-- I moved all logic functions into logic_utils.py
-- I fixed check_guess() so High/Low hints are now correct
-- I removed the even/odd string conversion bug from app.py
-- I fixed update_score() so the score never goes below 0
-- I fixed the Hard difficulty range to 1-200
+Use the Investigator: Scroll to Section 2 in the app to report a glitch.
 
-## 📸 Demo
+🕵️‍♂️ Technical Debugging (Phase 1)
+Bugs Fixed:
 
-![Winning Game Screenshot](screenshot.png)
+Reversed Logic: Fixed check_guess() so hints (Higher/Lower) are actually correct.
 
-I fixed the game so it correctly shows "Go LOWER" when I guess
-too high, "Go HIGHER" when I guess too low, and ends properly
-when I win. My score stays positive and difficulty ranges are
-now logical.
+Data Integrity: Removed a bug where the secret number was being converted to a string.
 
-## ✅ Tests
+Scoring: Repaired update_score() so points never drop below 0.
 
-I got all 5 pytest tests passing:
-- test_winning_guess
-- test_guess_too_high
-- test_guess_too_low
-- test_score_never_negative
-- test_correct_hint_message
+Difficulty Scaling: Adjusted Hard mode to a 1-200 range for proper scaling.
 
-I ran them with: `python3 -m pytest`
+Tests Passed:
 
-## 🚀 Stretch Features
+✅ test_winning_guess | ✅ test_guess_too_high | ✅ test_guess_too_low
 
-- [ ] [[Winning Game Screenshot]Screenshot within the files can't put it in ReadMe]
+✅ test_score_never_negative | ✅ test_correct_hint_message
+
+📺 Final Demo & Walkthrough
+Loom Video Link: [INSERT YOUR LOOM LINK HERE]
+
+In this video, I demonstrate a successful game run, an AI glitch investigation using local data, and the guardrail system blocking an off-topic question.
+
+📈 Reflection
+This project demonstrates my ability to take an unreliable prototype and turn it into a verifiable, reliable AI system. As a student focused on Technical Product Management, I focused on "reproducibility"—ensuring that any developer could clone this repo and have a working, agentic system running in seconds.
