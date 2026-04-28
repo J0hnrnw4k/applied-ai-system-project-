@@ -2,4 +2,4 @@ GLITCH-101: Players falling through the floor in the "Old Oak" level. FIX: Updat
 GLITCH-102: Game crashes when clicking 'Save' with a full inventory. FIX: Increase the memory buffer in the save_manager.py file.
 GLITCH-103: The 'Gold Sword' doesn't do damage to Boss 3. FIX: Check elemental resistance settings in the combat script.
 GLITCH-104: Screen flickering in the main menu on Mac. FIX: Disable V-Sync in the graphics settings menu.
-GLITCH-105: Character gets stuck in a T-pose after jumping. FIX: Re-import the jump_animation.fbx file.
+GLITCH-105: Character gets stuck in a T-pose after jumping. FIX: Re-import the jump_animation.fbx file.python3 -m streamlit run app.py
